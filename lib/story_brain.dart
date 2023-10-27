@@ -38,7 +38,14 @@ class StoryBrain{
   String getStory()
   {
    return _storyData[_count].storyTitle;
-
+  }
+  String getChoice1()
+  {
+    return _storyData[_count].choice1;
+  }
+  String getChoice2()
+  {
+    return _storyData[_count].choice2;
   }
 
 
