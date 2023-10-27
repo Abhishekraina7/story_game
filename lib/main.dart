@@ -7,9 +7,10 @@ void main() => runApp(Destini());
 
 class Destini extends StatelessWidget {
   Widget build(BuildContext context) {
-    return MaterialApp(
+      return MaterialApp(
       theme: ThemeData.dark(), //learn about this from documentation
-      home: StoryPage(), // This pulls the statefull widget wale sare functions
+      home: StoryPage(),
+        debugShowCheckedModeBanner: true,// This pulls the statefull widget wale sare functions
     );
   }
 }
@@ -26,7 +27,13 @@ class _StoryPageState extends State<StoryPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        //TODO: Step 1 - Add background.png to this Container as a background image
+        width: double.infinity,
+        decoration: const BoxDecoration(    //SOMETHIN NEW: Search and read about it.
+          image:DecorationImage(
+            image: AssetImage('images/background.png'),
+            fit: BoxFit.cover
+          )
+        ),
         padding: const EdgeInsets.symmetric(vertical: 50.0, horizontal: 15.0),
         constraints: const BoxConstraints.expand(),
         child: SafeArea(
@@ -38,7 +45,7 @@ class _StoryPageState extends State<StoryPage> {
                 child: Center(
                   child: Text(
                     //TODO: Step 10 - use the storyBrain to get the first story title and display it in this Text Widget.
-                    'Story text will go here.',
+                    brain.getStory(),
                     style: TextStyle(
                         fontSize: 25.0,color:Colors.white
                     ),
@@ -47,9 +54,11 @@ class _StoryPageState extends State<StoryPage> {
               ),
               Expanded(
                 flex: 2,
-                child: TextButton(
-                  style: ButtonStyle(
-                    foregroundColor:MaterialStateProperty.all<Color>(Colors.red),),
+                child: Container(
+                margin: const EdgeInsets.all(1.0),
+                  color: Colors.red,
+                  child:TextButton(
+
                   onPressed: (){
                     //Choice 1 made by user.
                   },
@@ -60,30 +69,35 @@ class _StoryPageState extends State<StoryPage> {
                     'Choice 1', style: TextStyle( fontSize: 20.0,color: Colors.white),
                   ),
                 ),
+                ),
               ),
               const SizedBox(
                 height: 20.0,
               ),
+
               Expanded(
                 flex: 2,
+                child: Container(
+                  margin: const EdgeInsets.all(1.0),
+                  color: Colors.blue,
+                  child:TextButton(
+                    style: ButtonStyle(
+                        foregroundColor: MaterialStateProperty.all<Color>(Colors.blue)),
+                    onPressed: (){
+                      //Choice 2 made by user.
+                    },
+
+                    //TODO: Step 19 - Call the nextStory() method from storyBrain and pass the number 2 as the choice made by the user.
+                    child: const Text(
+                      //TODO: Step 14 - Use the storyBrain to get the text for choice 2.
+                      'Choice 2',
+                      style: TextStyle(
+                          fontSize: 20.0,color:Colors.white
+                      ),
+                    ),
+                  ),),
                 //TODO: Step 26 - Use a Flutter Visibility Widget to wrap this FlatButton.
                 //TODO: Step 28 - Set the "visible" property of the Visibility Widget to equal the output from the buttonShouldBeVisible() method in the storyBrain.
-                child: TextButton(
-                  style: ButtonStyle(
-                      foregroundColor: MaterialStateProperty.all<Color>(Colors.blue)),
-                  onPressed: (){
-                    //Choice 2 made by user.
-                  },
-
-                  //TODO: Step 19 - Call the nextStory() method from storyBrain and pass the number 2 as the choice made by the user.
-                  child: const Text(
-                    //TODO: Step 14 - Use the storyBrain to get the text for choice 2.
-                    'Choice 2',
-                    style: TextStyle(
-                        fontSize: 20.0,color:Colors.white
-                    ),
-                  ),
-                ),
               ),
             ],
           ),
