@@ -24,6 +24,7 @@ class StoryPage extends StatefulWidget {
 class _StoryPageState extends State<StoryPage> {
   StoryBrain brain = StoryBrain();
   @override
+
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
@@ -40,13 +41,13 @@ class _StoryPageState extends State<StoryPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-             const Expanded(
+               Expanded(
                 flex: 12,
                 child: Center(
                   child: Text(
-                    //TODO: Step 10 - use the storyBrain to get the first story title and display it in this Text Widget.
+                    //doneTODO: Step 10 - use the storyBrain to get the first story title and display it in this Text Widget.
                     brain.getStory(),
-                    style: TextStyle(
+                    style: const TextStyle(
                         fontSize: 25.0,color:Colors.white
                     ),
                   ),

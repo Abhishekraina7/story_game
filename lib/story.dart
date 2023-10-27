@@ -5,19 +5,19 @@ class Story {
   late String choice1;
   late String choice2;
 
-  //Before- Seeing the other's code
+//Before- Seeing the other's code
 
-  // Story({required String storyTitle, required String choice1, required String choice2})
-  // {
-  //   this.storyTitle = storyTitle;
-  //   this.choice1 = choice1;
-  //   this.choice2 = choice2;
-  //
-  // }
+Story({required String storyTitle, required String choice1, required String choice2})
+{
+  this.storyTitle = storyTitle;
+  this.choice1 = choice1;
+  this.choice2 = choice2;
+
+}
 
 //After- Learned this from someone else's code
-  Story(
-      {required this.storyTitle, required this.choice1, required this.choice2});
+
+
 }
 
 
