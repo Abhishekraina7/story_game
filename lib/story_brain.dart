@@ -38,7 +38,9 @@ class StoryBrain{
   String getStory()
   {
    return _storyData[_count].storyTitle;
+
   }
+
 
 
 }
