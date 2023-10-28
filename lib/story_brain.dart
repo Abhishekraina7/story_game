@@ -3,7 +3,7 @@ import 'story.dart';
 
 //Done TODO: Step 5 - Create a new class called StoryBrain.
 class StoryBrain{
-  int _count =0;
+
   List<Story> _storyData = [
     Story(
         storyTitle:
@@ -35,9 +35,12 @@ class StoryBrain{
         choice1: 'Restart',
         choice2: '')
   ];
+
+
   String getStory()
   {
    return _storyData[_count].storyTitle;
+
   }
   String getChoice1()
   {
@@ -48,6 +51,60 @@ class StoryBrain{
     return _storyData[_count].choice2;
   }
 
+  int _count =0;
+
+
+  void nextStory(int choicenumber)
+  {
+    if(choicenumber ==1 && _count==0)
+    {
+      _count=2;
+    }
+    else if(choicenumber ==2 && _count==0)
+    {
+      _count=1;
+    }
+    else if(choicenumber ==1 && _count==1)
+    {
+      _count=2;
+    }
+    else if(choicenumber ==2 && _count==1)
+    {
+      _count=3;
+    }
+    else if(choicenumber ==1 && _count==2)
+    {
+      _count=5;
+    }
+    else if(choicenumber ==2 && _count==2)
+    {
+      _count=4;
+    }
+    else if(_count ==3 || _count==4 || _count==5)
+    {
+      restart();
+      buttonvisibility();
+    }
+  }
+  void restart()
+  {
+    _count=0;
+  }
+
+  bool buttonvisibility()
+  {
+    if(_count == 3 || _count==4 || _count==5)
+    {
+      return false;
+    }
+    else
+    {
+      return true;
+    }
+  }
+
+
+
 
 
 }
@@ -57,22 +114,22 @@ class StoryBrain{
 
 //TODO: Step 23 - Use the storyNumber property inside getStory(), getChoice1() and getChoice2() so that it gets the updated story and choices rather than always just the first (0th) one.
 
-//TODO: Step 8 - Create a method called getStory() that returns the first storyTitle from _storyData.
+//doneTODO: Step 8 - Create a method called getStory() that returns the first storyTitle from _storyData.
 
-//TODO: Step 11 - Create a method called getChoice1() that returns the text for the first choice1 from _storyData.
+//doneTODO: Step 11 - Create a method called getChoice1() that returns the text for the first choice1 from _storyData.
 
-//TODO: Step 12 - Create a method called getChoice2() that returns the text for the first choice2 from _storyData.
+//doneTODO: Step 12 - Create a method called getChoice2() that returns the text for the first choice2 from _storyData.
 
 //TODO: Step 25 - Change the storyNumber property into a private property so that only story_brain.dart has access to it. You can do this by right clicking on the name (storyNumber) and selecting Refactor -> Rename to make the change across all the places where it's used.
 
-//TODO: Step 16 - Create a property called storyNumber which starts with a value of 0. This will be used to track which story the user is currently viewing.
+//doneTODO: Step 16 - Create a property called storyNumber which starts with a value of 0. This will be used to track which story the user is currently viewing.
 
-//TODO: Step 17 - Create a method called nextStory(), it should not have any outputs but it should have 1 input called choiceNumber which will be the choice number (int) made by the user.
+//doneTODO: Step 17 - Create a method called nextStory(), it should not have any outputs but it should have 1 input called choiceNumber which will be the choice number (int) made by the user.
 
-//TODO: Step 20 - Download the story plan here: https://drive.google.com/uc?export=download&id=1KU6EghkO9Hf2hRM0756xFHgNaZyGCou3
+//doneTODO: Step 20 - Download the story plan here: https://drive.google.com/uc?export=download&id=1KU6EghkO9Hf2hRM0756xFHgNaZyGCou3
 
-//TODO: Step 21 - Using the story plan, update nextStory() to change the storyNumber depending on the choice made by the user. e.g. if choiceNumber was equal to 1 and the storyNumber is 0, the storyNumber should become 2.
+//doneTODO: Step 21 - Using the story plan, update nextStory() to change the storyNumber depending on the choice made by the user. e.g. if choiceNumber was equal to 1 and the storyNumber is 0, the storyNumber should become 2.
 
-//TODO: Step 22 - In nextStory() if the storyNumber is equal to 3 or 4 or 5, that means it's the end of the game and it should call a method called restart() that resets the storyNumber to 0.
+//doneODO: Step 22 - In nextStory() if the storyNumber is equal to 3 or 4 or 5, that means it's the end of the game and it should call a method called restart() that resets the storyNumber to 0.
 
 //TODO: Step 27 - Create a method called buttonShouldBeVisible() which checks to see if storyNumber is 0 or 1 or 2 (when both buttons should show choices) and return true if that is the case, else it should return false.
