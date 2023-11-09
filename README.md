@@ -1,16 +1,25 @@
-# story_game
+A story Game made with flutter
 
-A new Flutter project.
+This is a very basic project in which concepts like:
+1)OOPS
+2)Conditionals
+3)Functions
+are used and implemented to develop the command over them.
 
-## Getting Started
+This project gives idea on how to develop and organized and modulerized project.
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+## Authors
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- [abhishekraina7](https://github.com/Abhishekraina7)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+## Demo
+
+Visual glance
+
+
+
+## Technologies
+
+ Flutter, Android Studio, Dart.
